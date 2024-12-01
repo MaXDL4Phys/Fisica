@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\begin{document}
+
+\begin{tikzpicture}[scale=5]
+    % Axes
+    \draw[->, thick] (0,0,0) -- (10,0,0) node[anchor=north east] {\textcolor{blue}{$x$}};
+    \draw[->, thick] (0,0,0) -- (0,7,0) node[anchor=north west] {\textcolor{red}{$y$}};
+    \draw[->, thick] (0,0,0) -- (0,0,10) node[anchor=south] {\textcolor{green!80!black}{$z$}};
+    
+    % Unit vectors with length 1
+    \draw[->, thick, blue] (0,0,0) -- (1,0,0) node[anchor=north] {$\textcolor{blue}{\mathbf{i}}$};
+    \draw[->, thick, red] (0,0,0) -- (0,1,0) node[anchor=east] {$\textcolor{red}{\mathbf{j}}$};
+    \draw[->, thick, green!80!black] (0,0,0) -- (0,0,1) node[anchor=west] {$\textcolor{green!80!black}{\mathbf{k}}$};
+    
+    % Vector a with components (6,4,6)
+    \draw[->, thick, black] (0,0,0) -- (6,4,6) node[anchor=south east] {$\mathbf{a}$};
+
+    % Orthogonal projections of a
+    \draw[dashed, gray] (6,4,6) -- (6,4,0);
+    \draw[dashed, gray] (6,4,6) -- (6,0,0);
+    \draw[dashed, gray] (6,4,6) -- (0,4,0);
+
+    % Components labels
+    \node[anchor=north] at (6,0,0) {$a_x = 6$};
+    \node[anchor=east] at (0,4,0) {$a_y = 4$};
+    \node[anchor=west] at (0,0,6) {$a_z = 6$};
+
+\end{tikzpicture}
+
+\end{document}

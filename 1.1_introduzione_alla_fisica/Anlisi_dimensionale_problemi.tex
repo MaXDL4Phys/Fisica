@@ -1,0 +1,170 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse} % tema colori
+
+% Pacchetti aggiuntivi
+\usepackage{xcolor}
+
+% Colori personalizzati
+\setbeamercolor{title}{fg=cyan}
+\setbeamercolor{frametitle}{bg=blue!40, fg=white}
+\setbeamercolor{structure}{fg=cyan}
+
+\title{Problemi di Analisi Dimensionale}
+\subtitle{Appunti ed Esercizi} % Sottotitolo
+\author{Prof. Massimo Bosetti}
+\institute{Liceo da Vinci}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Problemi con Soluzione}
+
+\begin{frame}{Problema 1: Area di un Cerchio}
+    \textbf{Formula}: \( A = \pi r^2 \)
+    
+    \textbf{Passaggi della Soluzione}:
+    \begin{enumerate}
+        \item La formula per l'area del cerchio è \( A = \pi r^2 \).
+        \item La costante \(\pi\) è adimensionale e quindi non influisce sull'analisi dimensionale.
+        \item Il raggio \(r\) ha dimensioni di lunghezza \([\ell]\).
+        \item Elevando \(r\) al quadrato, otteniamo \([r^2] = [\ell^2]\).
+    \end{enumerate}
+    \textbf{Conclusione}: Le dimensioni dell'area sono \([A] = [\ell^2]\).
+\end{frame}
+
+\begin{frame}{Problema 2: Velocità Media}
+    \textbf{Formula}: \( v_m = \frac{s}{t} \)
+    
+    \textbf{Passaggi della Soluzione}:
+    \begin{enumerate}
+        \item La velocità media è definita come lo spazio percorso \(s\) diviso il tempo \(t\).
+        \item Lo spazio \(s\) ha dimensioni di lunghezza \([\ell]\).
+        \item Il tempo \(t\) ha dimensioni di \([t]\).
+        \item Dividendo le dimensioni di \(s\) per quelle di \(t\), otteniamo:
+        \[
+        [v_m] = \frac{[\ell]}{[t]} = [\ell \cdot t^{-1}]
+        \]
+    \end{enumerate}
+    \textbf{Conclusione}: Le dimensioni della velocità media sono \([v_m] = [\ell \cdot t^{-1}]\).
+\end{frame}
+
+\begin{frame}{Problema 3: Accelerazione Media}
+    \textbf{Formula}: \( v_m = \frac{s}{t} \)
+    
+    \textbf{Passaggi della Soluzione}:
+    \begin{enumerate}
+        \item L'acceleraziobe media è definita come la variazione di velocità  \(v\) diviso il tempo \(t\).
+        \item velocità  \(v\) ha dimensioni di lunghezza \([\ell \cdot t^{-1}]]\).
+        \item Il tempo \(t\) ha dimensioni di \([t]\).
+        \item Dividendo le dimensioni di \(v\) per quelle di \(t\), otteniamo:
+        \[
+        [v_m] = \frac{[\ell \cdot t^{-1}]}{[t]} = [\ell \cdot t^{-1} t^{-1}] = [\ell \cdot t^{-2}]
+        \]
+    \end{enumerate}
+    \textbf{Conclusione}: Le dimensioni dell'accelrazione media sono \([a_m] = [\ell \cdot t^{-2}]\).
+\end{frame}
+
+\begin{frame}{Problema 4: Forza}
+    \textbf{Formula}: $ F = m \cdot a $
+    \textbf{Passaggi della Soluzione}:
+    \begin{enumerate}
+        \item La forza media è definita come il prodotto tra una massa e un'accelerazione\(t\).
+        \item l'accelerazione  \(a\) ha dimensioni di lunghezza \([\ell \cdot t^{-2}]\).
+        \item la massa \(m\) ha dimensioni di \([M]\).
+        \item Moltiplicando le dimensioni di $a$ per quelle di \(m \), otteniamo:
+        \[
+        [F] = [M] \cdot [\ell \cdot t^{-2}]  [M \cdot \ell \cdot t^{-2}]
+        \]
+    \end{enumerate}
+    \textbf{Conclusione}: Le dimensioni della forza sono \[[F] = [M \cdot \ell \cdot t^{-2}]\].
+\end{frame}
+
+
+\begin{frame}{Problema 5: Forza Gravitazionale}
+    \textbf{Formula}: \( F = G \frac{m_1 m_2}{r^2} \)
+    
+    \textbf{Passaggi della Soluzione}:
+    \begin{enumerate}
+        \item La forza è data da \( F = G \frac{m_1 m_2}{r^2} \).
+        \item \(G\) è la costante gravitazionale, le cui dimensioni sono \([G] = [M^{-1} \ell^3 t^{-2}]\).
+        \item Le masse \(m_1\) e \(m_2\) hanno dimensioni \([M]\).
+        \item Il raggio \(r\) ha dimensioni \([\ell]\).
+        \item Applicando la formula, otteniamo:
+        \[
+        [F] = [G] \cdot [M] \cdot [M] \cdot [\ell^{-2}] = [M \cdot \ell \cdot t^{-2}]
+        \]
+    \end{enumerate}
+    \textbf{Conclusione}: Le dimensioni della forza gravitazionale sono \([F] = [M \cdot \ell \cdot t^{-2}]\) quindi quelle di una forza (vedi sopra).
+\end{frame}
+
+\begin{frame}{Problema 6: Pressione}
+    \textbf{Formula}: \( P = \frac{F}{A} \)
+    
+    \textbf{Passaggi della Soluzione}:
+    \begin{enumerate}
+        \item La pressione è definita come forza \(F\) divisa per area \(A\).
+        \item La forza \(F\) ha dimensioni \([M \cdot \ell \cdot t^{-2}]\).
+        \item L'area \(A\) ha dimensioni \([\ell^2]\).
+        \item Dividendo le dimensioni di \(F\) per quelle di \(A\), otteniamo:
+        \[
+        [P] = \frac{[M \cdot \ell \cdot t^{-2}]}{[\ell^2]} = [M \cdot \ell^{-1} \cdot t^{-2}]
+        \]
+    \end{enumerate}
+    \textbf{Conclusione}: Le dimensioni della pressione sono \([P] = [M \cdot \ell^{-1} \cdot t^{-2}]\).
+\end{frame}
+
+\begin{frame}{Problema 7: Energia Cinètica}
+    \textbf{Formula}: \( E_k = \frac{1}{2}mv^2 \)
+    
+    \textbf{Passaggi della Soluzione}:
+    \begin{enumerate}
+        \item L'energia cinetica è data dalla formula \( E_k = \frac{1}{2}mv^2 \).
+        \item La massa \(m\) ha dimensioni \([M]\).
+        \item La velocità \(v\) ha dimensioni \([\ell \cdot t^{-1}]\).
+        \item Elevando \(v\) al quadrato, otteniamo \([v^2] = [\ell^2 \cdot t^{-2}]\).
+        \item Moltiplicando le dimensioni di \(m\) e \(v^2\), otteniamo:
+        \[
+        [E_k] = [M] \cdot [\ell^2 \cdot t^{-2}] = [M \cdot \ell^2 \cdot t^{-2}]
+        \]
+    \end{enumerate}
+    \textbf{Conclusione}: Le dimensioni dell'energia cinetica sono \([E_k] = [M \cdot \ell^2 \cdot t^{-2}]\).
+\end{frame}
+
+\section{Problemi senza Soluzione}
+
+\begin{frame}{Problema 6: Quantità di Moto}
+    \textbf{Formula}: \( p = m\cdot v \)
+    
+    Determina le dimensioni della quantità di moto $p$ = massa $\cdot$ velocità.
+\end{frame}
+
+\begin{frame}{Problema 8: Lavoro}
+    \textbf{Formula}: \( W = F \cdot s \)
+    
+    Determina le dimensioni del lavoro $W$ = Forza $\cdot$ Spostamento.
+\end{frame}
+
+\begin{frame}{Problema 8: Potenza}
+    \textbf{Formula}: \( P = \frac{W}{t} \)
+    
+    Determina le dimensioni della potenza $P =\frac{\text{Lavoro}}{\text{tempo}}$.
+\end{frame}
+
+\begin{frame}{Problema 9: Momento Angolare}
+    \textbf{Formula}: \( L = r \cdot p \)
+    
+    Determina le dimensioni del momento angolare $L$ = distanza $\times$ quantità di moto .
+\end{frame}
+
+\begin{frame}{Problema 10: Impulso}
+    \textbf{Formula}: \( J = F \cdot \Delta t \)
+    
+    Determina le dimensioni dell'impulso dove $F$ è una forza e $\Delta t $ è un tempo.
+\end{frame}
+
+\end{document}

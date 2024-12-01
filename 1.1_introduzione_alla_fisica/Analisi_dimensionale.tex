@@ -1,0 +1,100 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse} % Tema colori
+
+% Pacchetti aggiuntivi
+\usepackage{xcolor}
+
+
+
+% Colori personalizzati
+\setbeamercolor{title}{fg=cyan}
+\setbeamercolor{frametitle}{bg=blue!40, fg=white}
+\setbeamercolor{structure}{fg=cyan}
+
+\title{Analisi Dimensionale}
+\subtitle{Appunti ed Esercizi} % Aggiunto sottotitolo
+\author{Prof. Massimo Bosetti}
+\institute{Liceo da Vinci }
+\date{2024/25}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Definizioni di Base}
+    \begin{itemize}
+        \item Le grandezze fisiche si dividono in \textbf{fondamentali} e \textbf{derivate}.
+        \item Le grandezze fondamentali includono lunghezza, tempo e massa, misurabili direttamente.
+        \item Le grandezze derivate si ottengono dalle fondamentali, es. superficie, volume.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Grandezze Fondamentali}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            Nome & Simbolo & Unità (SI) & Dimensioni \\
+            \hline
+            Lunghezza & \( \ell \) & m & \([\ell]\) \\
+            Tempo & \( t \) & s & \([t]\) \\
+            Massa & \( m \) & kg & \([M]\) \\
+            Corrente elettrica & \( I \) & A & \([I]\) \\
+            Temperatura termodinamica & \( T \) & K & \([T]\) \\
+            Quantità di sostanza & \( n \) & mol & \([N]\) \\
+            Intensità luminosa & \( I_l \) & cd & \([J]\) \\
+            \hline
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+
+\begin{frame}{Esempio: Superficie}
+    \begin{itemize}
+        \item La superficie di un rettangolo si ottiene come prodotto di due lunghezze.
+        \item Analisi dimensionale:
+        \[
+        [S] = [\ell] \cdot [\ell] = [\ell^2]
+        \]
+        \item Quindi, \( S \) è una grandezza derivata con dimensioni di una lunghezza al quadrato.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Problema 1: Volume di un Parallelepipedo}
+    \begin{itemize}
+        \item Formula del volume: \( V = a \cdot b \cdot c \)
+        \item Analisi dimensionale:
+        \[
+        [V] = [a] \cdot [b] \cdot [c] = [\ell^3]
+        \]
+        \item Il volume ha quindi dimensioni di lunghezza al cubo.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Problema 2: Densità}
+    \begin{itemize}
+        \item Formula della densità: \( d = \frac{m}{V} \)
+        \item Utilizzando \( [V] = [\ell^3] \) e \( [m] = m \):
+        \[
+        [d] = \frac{[m]}{[\ell^3]} = [m \cdot \ell^{-3}]
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Problema 3: Uguaglianze Dimensionali}
+    \begin{itemize}
+        \item Verifica delle uguaglianze dimensionali:
+        \[
+        [d \cdot L] = [m \cdot \ell^{-2}]
+        \]
+        \item Confronto con l'uguaglianza:
+        \[
+        \text{Uguaglianza verificata}
+        \]
+    \end{itemize}
+\end{frame}
+
+\end{document}

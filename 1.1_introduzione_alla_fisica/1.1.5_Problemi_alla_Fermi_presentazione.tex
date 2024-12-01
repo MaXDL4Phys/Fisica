@@ -1,0 +1,160 @@
+\documentclass{beamer}
+
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+
+\title{Risoluzione di Problemi alla Fermi}
+\author{Simulazione di Enrico Fermi}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Introduzione
+\begin{frame}{Introduzione}
+    \begin{itemize}
+        \item I problemi alla Fermi richiedono stime approssimative basate su dati incompleti. \pause
+        \item L'obiettivo è ottenere una risposta con un ordine di grandezza ragionevole. \pause
+        \item Metodo: \pause
+        \begin{enumerate}
+            \item Suddividere il problema in fattori. \pause
+            \item Fare ipotesi ragionevoli. \pause
+            \item Calcolare la stima.
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+% Problema 1
+\begin{frame}{Problema 1: Accordatori di Pianoforte in Trentino}
+    \textbf{Domanda:} Quanti accordatori di pianoforte ci sono in Trentino? \\
+    \vspace{1em}
+    \textbf{Dati e Assunzioni}: \pause
+    \begin{itemize}
+        \item Popolazione del Trentino \pause
+        $5 \times 10^5$ persone. \pause
+        \item Famiglia media  \pause
+        2 persone. \pause
+        \item Percentuale di famiglie con pianoforte  \pause 10\%. \pause
+        \item Un accordatore lavora su \pause 1.000 pianoforti/anno. \pause
+    \end{itemize}
+    \pause
+    \textbf{Calcolo}:
+    \[
+    \text{Pianoforti} = \frac{5 \cdot 10^5}{2} \times 0.1 = 10^4
+    \]
+    \pause
+    \[
+    \text{Accordatori} = \frac{10^4}{10^3} = 10^1
+    \]
+    \pause
+    \textbf{Risultato:} circa 10 accordatori.
+\end{frame}
+
+% Problema 2
+\begin{frame}{Problema 2: Consumo di Carburante in Italia}
+    \textbf{Domanda:} Quanto carburante consumano le auto in un anno in un paese di 60 milioni di abitanti? \\
+    \vspace{1em}
+    \textbf{Soluzione 1}:
+    
+    \begin{itemize}
+        \item In Italia ci sono 681 auto ogni 1.000 abitanti, cioè circa 1 ogni 2 abitanti.
+        \item Numero di Auto Auto: $25 \times 10^6$. \pause
+        \item Km percorsi/anno: $10^4$ km. \pause
+        \item Consumo/km: $0.1$ litri.
+    \end{itemize}
+    \pause
+    \textbf{Calcolo}:
+    \[
+    \text{Consumo totale} = 25 \times 10^6 \times 10^4 \times 0.1 = 2.5 \times 10^{10} \text{ litri.}
+    \]
+    \pause
+    \textbf{Risultato:} $2.5 \times 10^{10}$ litri/anno.
+\end{frame}
+
+% Problema 3
+\begin{frame}{Problema 3: Raggio della Terra}
+    \textbf{Domanda:} Qual è il raggio terrestre? \\
+    \vspace{1em}
+    \textbf{Dati e Assunzioni}:
+    \begin{itemize}
+        \item Distanza tra fusi orari: 1.000 miglia. \pause
+        \item Totale fusi orari: 24. \pause
+        \item Circonferenza terrestre: $24 \times 10^3$ miglia.
+    \end{itemize}
+    \pause
+    \textbf{Calcolo}:
+    \[
+    r = \frac{\text{Circonferenza}}{2\pi} = \frac{24 \times 10^3}{2 \pi} \approx 4 \times 10^3 \text{ miglia}.
+    \]
+    \pause
+    \textbf{Risultato:} circa 6.400 km.
+\end{frame}
+
+% Problema 4
+\begin{frame}{Problema 4: Consumo di Tè in Cina}
+    \textbf{Domanda:} Quanto tè c'è in Cina? \\
+    \vspace{1em}
+    \textbf{Dati e Assunzioni}:
+    \begin{itemize}
+        \item Popolazione: $10^9$ persone. \pause
+        \item Consumo giornaliero/persona: 10 g di foglie. \pause
+        \item Durata delle scorte: $10^2$ giorni.
+    \end{itemize}
+    \pause
+    \textbf{Calcolo}:
+    \[
+    \text{Tè totale} = 10^9 \times 10^{-2} \times 10^2 = 10^9 \text{ kg.}
+    \]
+    \pause
+    \textbf{Risultato:} $10^9$ kg.
+\end{frame}
+
+% Problema 5
+\begin{frame}{Problema 5: Numero di Respiri al Giorno}
+    \textbf{Domanda:} Quanti respiri fa una persona in una giornata? \\
+    \vspace{1em}
+    \textbf{Dati e Assunzioni}:
+    \begin{itemize}
+        \item Respiri/minuto: 10. \pause
+        \item Minuti in un giorno: $24 \times 60 = 1440$.
+    \end{itemize}
+    \pause
+    \textbf{Calcolo}:
+    \[
+    \text{Respiri/giorno} = 10 \times 1440 \approx 1.4 \times 10^4.
+    \]
+    \pause
+    \textbf{Risultato:} $10^4$ respiri/giorno.
+\end{frame}
+
+% Problema 6
+\begin{frame}{Problema 6: Numero di Capelli}
+    \textbf{Domanda:} Quanti capelli ha in media un essere umano? \\
+    \vspace{1em}
+    \textbf{Dati e Assunzioni}:
+    \begin{itemize}
+        \item Densità: $10^2$ capelli/cm². \pause
+        \item Area del cuoio capelluto: $600 \, \text{cm}^2$.
+    \end{itemize}
+    \pause
+    \textbf{Calcolo}:
+    \[
+    \text{Capelli totali} = 10^2 \times 600 = 10^5.
+    \]
+    \pause
+    \textbf{Risultato:} $10^5$ capelli.
+\end{frame}
+
+% Conclusione
+\begin{frame}{Conclusione}
+    \begin{itemize}
+        \item I problemi alla Fermi permettono di stimare ordini di grandezza con informazioni limitate. \pause
+        \item Fondamentali in fisica, economia e innovazione. \pause
+        \item Esercitandosi, è possibile migliorare la capacità di stima e il pensiero critico.
+    \end{itemize}
+\end{frame}
+
+\end{document}

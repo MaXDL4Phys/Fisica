@@ -1,0 +1,258 @@
+
+
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse} % Tema colori
+\definecolor{peach}{RGB}{255, 128, 64}
+
+\setbeamercolor{title}{fg=teal}
+\setbeamercolor{frametitle}{ fg=teal}
+\setbeamercolor{structure}{fg=peach}
+
+% Pacchetti aggiuntivi
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc} % Libreria per il calcolo delle coordinate
+\usetikzlibrary{scopes}
+\title{Determinante delle Matrici e Applicazioni}
+\author{Prof. M.Bosetti}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% Slide 1: Introduzione
+\begin{frame}{Introduzione: definizione}
+    \textbf{Determinante:} Il determinante è una funzione che associa a ogni matrice quadrata un numero reale (o complesso), utile per: 
+    \begin{itemize}
+        \item Verificare l'invertibilità di una matrice.
+        \item Risolvere sistemi lineari.
+        \item Calcolare il volume di parallelepipedi in spazi vettoriali.
+    \end{itemize}
+\end{frame}
+
+% Slide 2: Determinante di una matrice 2x2
+\begin{frame}{Determinante di una matrice $2 \times 2$}
+    Per una matrice quadrata $A$ di ordine $2 \times 2$: 
+$$
+    A = \begin{bmatrix}
+    a & b \\
+    c & d
+    \end{bmatrix}
+$$
+    Il determinante si calcola come:
+$$
+    \det(A) = ad - bc
+$$
+    \textbf{Esempio:}
+$$
+    A = \begin{bmatrix}
+    3 & 2 \\
+    1 & 4
+    \end{bmatrix}, \quad \det(A) = (3)(4) - (2)(1) = 12 - 2 = 10
+$$
+\end{frame}
+
+% Slide 3: Determinante di una matrice 3x3
+\begin{frame}{Determinante di una matrice $3 \times 3$}
+    Per una matrice quadrata $A$ di ordine $3 \times 3$:
+$$
+    A = \begin{bmatrix}
+    a & b & c \\
+    d & e & f \\
+    g & h & i
+    \end{bmatrix}
+$$
+    Il determinante si calcola come:
+$$
+    \text{det}(A) = a(ei - fh) - b(di - fg) + c(dh - eg)
+$$
+    \textbf{Esempio:}
+$$
+    A = \begin{bmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6 \\
+    7 & 8 & 9
+    \end{bmatrix}
+$$
+$$
+    \text{det}(A) = 1(5 \cdot 9 - 6 \cdot 8) - 2(4 \cdot 9 - 6 \cdot 7) + 3(4 \cdot 8 - 5 \cdot 7)
+$$
+$$
+    = 1(-3) - 2(-6) + 3(-4) = -3 + 12 - 12 = -3
+$$
+\end{frame}
+
+% Slide 4: Prodotto vettoriale
+\begin{frame}{Esempio: Prodotto vettoriale e determinante}
+    \textbf{Definizione:} Il prodotto vettoriale di due vettori $\vec{u}$ e $\vec{v}$ in $\mathbb{R}^3$ può essere espresso tramite il determinante di una matrice:
+$$
+    \vec{u} \times \vec{v} = \begin{vmatrix}
+    \hat{i} & \hat{j} & \hat{k} \\
+    u_x & u_y & u_z \\
+    v_x & v_y & v_z
+    \end{vmatrix}
+$$
+    \textbf{Esempio:}
+$$
+    \vec{u} = (1, 2, 3), \quad \vec{v} = (4, 5, 6)
+$$
+    Calcoliamo:
+$$
+    \vec{u} \times \vec{v} = \hat{i} \begin{vmatrix}
+    2 & 3 \\
+    5 & 6
+    \end{vmatrix}
+    - \hat{j} \begin{vmatrix}
+    1 & 3 \\
+    4 & 6
+    \end{vmatrix}
+    + \hat{k} \begin{vmatrix}
+    1 & 2 \\
+    4 & 5
+    \end{vmatrix}
+$$
+$$
+    = \hat{i} (2 \cdot 6 - 3 \cdot 5) - \hat{j} (1 \cdot 6 - 3 \cdot 4) + \hat{k} (1 \cdot 5 - 2 \cdot 4)
+$$
+$$
+    = -3\hat{i} + 6\hat{j} - 3\hat{k}
+$$
+\end{frame}
+
+% Slide 5: Velocità e velocità angolare
+\begin{frame}{Velocità lineare e velocità angolare: formula inversa}
+    \textbf{Relazione generale:}
+    La velocità lineare $\vec{v}$ è legata alla velocità angolare $\vec{\omega}$ tramite:
+$$
+    \vec{v} = \vec{\omega} \times \vec{r}
+$$
+    Per ricavare $\vec{\omega}$, usiamo:
+$$
+    \vec{\omega} = \frac{\vec{r} \times \vec{v}}{|\vec{r}|^2}
+$$
+    dove:
+    \begin{itemize}
+        \item $\vec{r} \times \vec{v}$: prodotto vettoriale tra $\vec{r}$ e $\vec{v}$,
+        \item $|\vec{r}|^2 = r_x^2 + r_y^2 + r_z^2$.
+    \end{itemize}
+\end{frame}
+
+% Slide 6: Esempio nel piano z-y
+\begin{frame}{Esempio: Calcolo di $\vec{\omega}$ nel piano $z$-$y$}
+    Supponiamo:
+$$
+    \vec{v} = (0, 12, 8), \quad \vec{r} = (0, 3, 4)
+$$
+    \textbf{Calcolo del prodotto vettoriale:}
+$$
+    \vec{r} \times \vec{v} = \begin{vmatrix}
+    \hat{i} & \hat{j} & \hat{k} \\
+    0 & 3 & 4 \\
+    0 & 12 & 8
+    \end{vmatrix}
+$$
+$$
+    = \hat{i} (3 \cdot 8 - 4 \cdot 12) - \hat{j} (0 \cdot 8 - 4 \cdot 0) + \hat{k} (0 \cdot 12 - 3 \cdot 0)
+$$
+$$
+    = -24\hat{i} + 0\hat{j} + 0\hat{k}
+$$
+
+    \textbf{Calcolo di $|\vec{r}|^2$:}
+$$
+    |\vec{r}|^2 = r_y^2 + r_z^2 = 3^2 + 4^2 = 9 + 16 = 25
+$$
+
+    \textbf{Calcolo di $\vec{\omega}$:}
+$$
+    \vec{\omega} = \frac{\vec{r} \times \vec{v}}{|\vec{r}|^2} = \frac{-24\hat{i}}{25} = -0.96\hat{i}
+$$
+    \textbf{Risultato:} La velocità angolare è:
+$
+    \vec{\omega} = -0.96\hat{i} \, \mathrm{rad/s} $
+
+\end{frame}
+
+% Slide: Caso piano x-y
+\begin{frame}{Esempio: Calcolo di \(\vec{\omega}\) nel piano \(x\)-\(y\)}
+    Supponiamo:
+    \[
+    \vec{v} = (v_x, v_y, 0), \quad \vec{r} = (r_x, r_y, 0)
+    \]
+
+    \textbf{Relazione:}
+    La velocità angolare è:
+    \[
+    \vec{\omega} = \frac{\vec{r} \times \vec{v}}{|\vec{r}|^2}
+    \]
+
+    \textbf{Calcolo del prodotto vettoriale:}
+    \[
+    \vec{r} \times \vec{v} = \begin{vmatrix}
+    \hat{i} & \hat{j} & \hat{k} \\
+    r_x & r_y & 0 \\
+    v_x & v_y & 0
+    \end{vmatrix}
+    \]
+    Risolviamo:
+    \[
+    \vec{r} \times \vec{v} = \hat{i}(r_y \cdot 0 - 0 \cdot v_y) - \hat{j}(r_x \cdot 0 - 0 \cdot v_x) + \hat{k}(r_x \cdot v_y - r_y \cdot v_x)
+    \]
+    \[
+    = \hat{i}(0) - \hat{j}(0) + \hat{k}(r_x v_y - r_y v_x)
+    \]
+    \[
+    \vec{r} \times \vec{v} = (r_x v_y - r_y v_x) \hat{k}
+    \]
+    \end{frame}
+    
+
+    
+    \begin{frame}
+        
+    \textbf{Calcolo di \(|\vec{r}|^2\):}
+    \[
+    |\vec{r}|^2 = r_x^2 + r_y^2
+    \]
+
+    \textbf{Velocità angolare:}
+    La velocità angolare è quindi:
+    \[
+    \vec{\omega} = \frac{r_x v_y - r_y v_x}{r_x^2 + r_y^2} \hat{k}
+    \]
+
+    \textbf{Esempio numerico:}
+    Supponiamo:
+    \[
+    \vec{v} = (3, 4, 0), \quad \vec{r} = (1, 2, 0)
+    \]
+    Calcoliamo:
+    \[
+    \vec{r} \times \vec{v} = \begin{vmatrix}
+    \hat{i} & \hat{j} & \hat{k} \\
+    1 & 2 & 0 \\
+    3 & 4 & 0
+    \end{vmatrix}
+    = \hat{k}(1 \cdot 4 - 2 \cdot 3) = \hat{k}(4 - 6) = -2\hat{k}
+    \]
+
+    \(|\vec{r}|^2\):
+    \[
+    |\vec{r}|^2 = 1^2 + 2^2 = 1 + 4 = 5
+    \]
+
+    \textbf{Velocità angolare:}
+    \[
+    \vec{\omega} = \frac{-2}{5} \hat{k} = -0.4 \hat{k} \, \mathrm{rad/s}
+    \]
+
+
+\end{frame}
+
+\end{document}

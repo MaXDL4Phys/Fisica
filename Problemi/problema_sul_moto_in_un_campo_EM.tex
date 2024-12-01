@@ -1,0 +1,114 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\section*{Soluzione dell'Esercizio}
+
+\textbf{Dati forniti:}
+\begin{itemize}
+    \item Velocità dell'elettrone: \(v = 800 \, \text{m/s}\)
+    \item Angolo di ingresso: \(\theta = 30^\circ\)
+    \item Numero di spire del solenoide: \(N = 1800\)
+    \item Corrente nel solenoide: \(I = 40 \, \text{A}\)
+    \item Permeabilità magnetica nel vuoto: \(\mu_0 = 4 \pi \times 10^{-7} \, \text{T·m/A}\)
+    \item Carica dell'elettrone: \(e = 1.6 \times 10^{-19} \, \text{C}\)
+    \item Massa dell'elettrone: \(m = 9.11 \times 10^{-31} \, \text{kg}\)
+\end{itemize}
+
+\textbf{Passo 1: Calcolo del campo magnetico (\(B\)) all'interno del solenoide}
+
+La formula per il campo magnetico è:
+\begin{equation}
+B = \mu_0 N I
+\end{equation}
+
+Sostituendo i valori:
+\begin{equation}
+B = (4 \pi \times 10^{-7}) \cdot 1800 \cdot 40 = 0.0905 \, \text{T}
+\end{equation}
+
+\textbf{Passo 2: Componenti della velocità}
+
+La velocità è composta da due componenti:
+\begin{align}
+v_\perp &= v \sin \theta \\
+v_\parallel &= v \cos \theta
+\end{align}
+
+Calcoliamo:
+\begin{align}
+v_\perp &= 800 \cdot \sin(30^\circ) = 400 \, \text{m/s} \\
+v_\parallel &= 800 \cdot \cos(30^\circ) \approx 692.82 \, \text{m/s}
+\end{align}
+
+\textbf{Passo 3: Calcolo del raggio (\(r\)) dell'orbita circolare}
+
+La formula per il raggio è:
+\begin{equation}
+r = \frac{m v_\perp}{e B}
+\end{equation}
+
+Sostituendo i valori:
+\begin{equation}
+r = \frac{(9.11 \times 10^{-31}) \cdot 400}{(1.6 \times 10^{-19}) \cdot 0.0905} \approx 2.52 \times 10^{-8} \, \text{m}
+\end{equation}
+
+\textbf{Passo 4: Calcolo del periodo (\(T\)) di rivoluzione}
+
+La formula per il periodo è:
+\begin{equation}
+T = \frac{2 \pi r}{v_\perp}
+\end{equation}
+
+Sostituendo i valori:
+\begin{equation}
+T = \frac{2 \pi \cdot (2.52 \times 10^{-8})}{400} \approx 3.95 \times 10^{-10} \, \text{s}
+\end{equation}
+
+\textbf{Passo 5: Calcolo del passo dell'elica (pitch)}
+
+Il passo è dato da:
+\begin{equation}
+\text{pitch} = v_\parallel \cdot T
+\end{equation}
+
+Sostituendo i valori:
+\begin{equation}
+\text{pitch} = 692.82 \cdot (3.95 \times 10^{-10}) \approx 2.74 \times 10^{-7} \, \text{m}
+\end{equation}
+
+\textbf{Passo 6: Numero di rivoluzioni}
+
+Il numero totale di rivoluzioni è:
+\begin{equation}
+n = \frac{L}{\text{pitch}}
+\end{equation}
+
+Assumendo \(L = 1 \, \text{m}\):
+\begin{equation}
+n = \frac{1}{2.74 \times 10^{-7}} \approx 3.65 \times 10^6
+\end{equation}
+
+\textbf{Risultati finali:}
+\begin{itemize}
+    \item Campo magnetico: \(B = 0.0905 \, \text{T}\)
+    \item Raggio dell'orbita: \(r = 2.52 \times 10^{-8} \, \text{m}\)
+    \item Periodo di rivoluzione: \(T = 3.95 \times 10^{-10} \, \text{s}\)
+    \item Passo dell'elica: \(\text{pitch} = 2.74 \times 10^{-7} \, \text{m}\)
+    \item Numero di rivoluzioni: \(n = 3.65 \times 10^6\)
+\end{itemize}
+
+\end{document}
+"""
+
+# Saving the LaTeX document to a file
+latex_file_path = "/mnt/data/soluzione_esercizio.tex"
+with open(latex_file_path, "w") as file:
+    file.write(latex_solution)
+
+latex_file_path

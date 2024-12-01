@@ -1,0 +1,271 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse} % Tema colori
+
+% Pacchetti aggiuntivi
+\usepackage{xcolor}
+
+% Colori personalizzati
+\setbeamercolor{title}{fg=cyan}
+\setbeamercolor{frametitle}{bg=blue!40, fg=white}
+\setbeamercolor{structure}{fg=cyan}
+
+\title{I Vettori in 3D}
+\subtitle{Concetti fondamentali e operazioni}
+\author{}
+\institute{}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Rappresentazione dei Vettori}
+
+\begin{frame}{Rappresentazione dei Vettori}
+    \begin{itemize}
+        \item Un vettore in 3D è rappresentato da una terna di componenti \((x, y, z)\) che descrivono la sua posizione rispetto agli assi.
+        \item Viene solitamente rappresentato con un segmento orientato in uno spazio tridimensionale.
+        \item La lunghezza del vettore rappresenta la sua magnitudine, mentre la direzione del segmento rappresenta la direzione del vettore.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Esempio Semplice: Rappresentazione di un Vettore}
+    \begin{itemize}
+        \item Consideriamo il vettore \(\vec{v} = (2, 3, 4)\).
+        \item Questo vettore ha componenti lungo gli assi \(x\), \(y\) e \(z\).
+        \item La magnitudine del vettore è:
+        \[
+        |\vec{v}| = \sqrt{2^2 + 3^2 + 4^2} = \sqrt{29}
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Applicazione Complessa: Rappresentazione in Coordinate Polari}
+    \begin{itemize}
+        \item Convertire il vettore \(\vec{v} = (1, 1, 1)\) in coordinate sferiche.
+        \item Calcolare la magnitudine:
+        \[
+        r = \sqrt{1^2 + 1^2 + 1^2} = \sqrt{3}
+        \]
+        \item Calcolare gli angoli:
+        \[
+        \theta = \arccos\left(\frac{z}{r}\right), \quad \phi = \arctan\left(\frac{y}{x}\right)
+        \]
+        \item Quindi, le coordinate sferiche sono \((r, \theta, \phi)\).
+    \end{itemize}
+\end{frame}
+
+\section{Operazioni sui Vettori}
+
+\begin{frame}{Somma di Vettori}
+    \begin{itemize}
+        \item La somma di due vettori \( \vec{A} \) e \( \vec{B} \) si ottiene sommando le componenti corrispondenti:
+        \[
+        \vec{A} + \vec{B} = (A_x + B_x, A_y + B_y, A_z + B_z)
+        \]
+        \item Graficamente, la somma dei vettori è rappresentata dal "metodo del parallelogramma" o dalla "regola del triangolo".
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Esercizio Semplice: Somma di Vettori}
+    \begin{itemize}
+        \item Dati i vettori \( \vec{A} = (1, 2, 3) \) e \( \vec{B} = (4, -1, 2) \).
+        \item Calcolare \( \vec{A} + \vec{B} \).
+        \item Soluzione:
+        \[
+        \vec{A} + \vec{B} = (1+4, 2+(-1), 3+2) = (5, 1, 5)
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Applicazione Complessa: Somma di Forze}
+    \begin{itemize}
+        \item Due forze \( \vec{F_1} \) e \( \vec{F_2} \) agiscono su un corpo.
+        \item \( \vec{F_1} = (10, 0, 0) \) N, \( \vec{F_2} = (0, 5, 0) \) N.
+        \item Calcolare la forza risultante \( \vec{F_R} \) e la sua magnitudine.
+        \item Soluzione:
+        \[
+        \vec{F_R} = \vec{F_1} + \vec{F_2} = (10, 5, 0)
+        \]
+        \[
+        |\vec{F_R}| = \sqrt{10^2 + 5^2 + 0^2} = \sqrt{125} = 11,18 \text{ N}
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Differenza di Vettori}
+    \begin{itemize}
+        \item La differenza tra due vettori \( \vec{A} \) e \( \vec{B} \) si ottiene sottraendo le componenti corrispondenti:
+        \[
+        \vec{A} - \vec{B} = (A_x - B_x, A_y - B_y, A_z - B_z)
+        \]
+        \item La differenza di vettori può essere vista come la somma del primo vettore con l'opposto del secondo.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Esercizio Semplice: Differenza di Vettori}
+    \begin{itemize}
+        \item Dati \( \vec{A} = (5, 4, 3) \) e \( \vec{B} = (2, 1, 0) \).
+        \item Calcolare \( \vec{A} - \vec{B} \).
+        \item Soluzione:
+        \[
+        \vec{A} - \vec{B} = (5-2, 4-1, 3-0) = (3, 3, 3)
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Applicazione Complessa: Spostamento Netto}
+    \begin{itemize}
+        \item Un oggetto si sposta dal punto \( P_1 = (2, 3, 5) \) al punto \( P_2 = (7, 6, 9) \).
+        \item Calcolare il vettore spostamento \( \Delta\vec{D} \).
+        \item Soluzione:
+        \[
+        \Delta\vec{D} = P_2 - P_1 = (7-2, 6-3, 9-5) = (5, 3, 4)
+        \]
+        \item La distanza percorsa è:
+        \[
+        |\Delta\vec{P}| = \sqrt{5^2 + 3^2 + 4^2} = \sqrt{50} = 7,07
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Moltiplicazione per uno Scalare}
+    \begin{itemize}
+        \item Dato un vettore \( \vec{A} = (A_x, A_y, A_z) \) e uno scalare \( k \), la moltiplicazione per uno scalare modifica la lunghezza del vettore:
+        \[
+        k \cdot \vec{A} = (k \cdot A_x, k \cdot A_y, k \cdot A_z)
+        \]
+        \item Se \( k = 1 \), il vettore rimane invariato. Se \( k = -1 \), otteniamo il vettore opposto.
+        \item Per \( |k| < 1 \), il vettore si riduce in lunghezza; per \( |k| > 1 \), il vettore si allunga.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Esercizio Semplice: Moltiplicazione per uno Scalare}
+    \begin{itemize}
+        \item Dato \( \vec{A} = (3, -2, 1) \) e \( k = 2 \).
+        \item Calcolare \( k \cdot \vec{A} \).
+        \item Soluzione:
+        \[
+        2 \cdot \vec{A} = (2 \cdot 3, 2 \cdot -2, 2 \cdot 1) = (6, -4, 2)
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Applicazione Complessa: Vettore Velocità}
+    \begin{itemize}
+        \item Un oggetto si muove con velocità \( \vec{v} = (5, 0, 0) \) m/s.
+        \item Dopo 3 secondi, calcolare lo spostamento \( \vec{s} \).
+        \item Soluzione:
+        \[
+        \vec{s} = \vec{v} \cdot t = (5 \cdot 3, 0, 0) = (15, 0, 0) \text{ m}
+        \]
+    \end{itemize}
+\end{frame}
+
+\section{Prodotti tra Vettori}
+
+\begin{frame}{Prodotto Scalare}
+    \begin{itemize}
+        \item Il prodotto scalare tra due vettori \( \vec{A} \) e \( \vec{B} \) restituisce uno scalare:
+        \[
+        \vec{A} \cdot \vec{B} = A_x B_x + A_y B_y + A_z B_z
+        \]
+        \item Questo prodotto misura la "proiezione" di un vettore sull'altro e indica la loro perpendicolarità:
+        \[
+        \vec{A} \cdot \vec{B} = 0 \Rightarrow \text{vettori perpendicolari}
+        \]
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Esercizio Semplice: Calcolo del Prodotto Scalare}
+    \begin{itemize}
+        \item Dati \( \vec{A} = (1, 0, 0) \) e \( \vec{B} = (0, 1, 0) \).
+        \item Calcolare \( \vec{A} \cdot \vec{B} \).
+        \item Soluzione:
+        \[
+        \vec{A} \cdot \vec{B} = (1 \cdot 0) + (0 \cdot 1) + (0 \cdot 0) = 0
+        \]
+        \item I vettori sono perpendicolari.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Applicazione Complessa: Angolo tra Due Vettori}
+    \begin{itemize}
+        \item Dati \( \vec{A} = (3, -3, 1) \) e \( \vec{B} = (4, 9, 2) \).
+        \item Calcolare l'angolo \( \theta \) tra \( \vec{A} \) e \( \vec{B} \).
+        \item Soluzione:
+        \[
+        \vec{A} \cdot \vec{B} = (3 \cdot 4) + (-3 \cdot 9) + (1 \cdot 2) = 12 -27 + 2 = -13
+        \]
+        \[
+        |\vec{A}| = \sqrt{3^2 + (-3)^2 + 1^2} = \sqrt{19}
+        \]
+        \[
+        |\vec{B}| = \sqrt{4^2 + 9^2 + 2^2} = \sqrt{101}
+        \]
+        \[
+        \cos\theta = \frac{\vec{A} \cdot \vec{B}}{|\vec{A}||\vec{B}|} = \frac{-13}{\sqrt{19} \sqrt{101}}
+        \]
+        \[
+        \theta = \arccos\left(\frac{-13}{\sqrt{19} \sqrt{101}}\right)
+        \]
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}{Prodotto Vettoriale}
+%     \begin{itemize}
+%         \item Il prodotto vettoriale tra due vettori \( \vec{A} \) e \( \vec{B} \) genera un nuovo vettore \( \vec{C} \), ortogonale sia a \( \vec{A} \) che a \( \vec{B} \).
+%         \[
+%         \vec{A} \times \vec{B} = (A_y B_z - A_z B_y, A_z B_x - A_x B_z, A_x B_y - A_y B_x)
+%         \]
+%         \item La direzione del vettore risultante segue la regola della mano destra.
+%         \item La magnitudine di \( \vec{C} \) è data da \( |\vec{C}| = |\vec{A}||\vec{B}| \sin(\theta) \), dove \( \theta \) è l'angolo tra \( \vec{A} \) e \( \vec{B} \).
+%     \end{itemize}
+% \end{frame}
+
+\begin{frame}{Prodotto Vettoriale}
+    \begin{itemize}
+ 
+        \item Il prodotto vettoriale può essere calcolato come il determinante di una matrice:
+        \begin{equation*}
+        \vec{C} =\vec{A} \times \vec{B} = \begin{vmatrix}
+        \mathbf{\hat{i}} & \mathbf{\hat{j}} & \mathbf{\hat{k}} \\
+        A_x & A_y & A_z \\
+        B_x & B_y & B_z \\
+        \end{vmatrix}\end{equation*}
+        $$ \vec{C} =\vec{A} \times \vec{B} =  \mathbf{\hat{i}} (A_y B_z - A_z B_y) +  \mathbf{\hat{j}}(A_z B_x - A_x B_z) +  \mathbf{\hat{k}}(A_x B_y - A_y B_x)
+        $$
+        \item Il prodotto vettoriale tra due vettori \( \vec{A} \) e \( \vec{B} \) genera un nuovo vettore \( \vec{C} \), ortogonale sia a \( \vec{A} \) che a \( \vec{B} \).
+        \item La direzione del vettore risultante segue la regola della mano destra.
+        \item Il modulo di \( \vec{C} \) è data da \( |\vec{C}| = |\vec{A}||\vec{B}| \sin(\theta) \), dove \( \theta \) è l'angolo tra \( \vec{A} \) e \( \vec{B} \).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Esercizio Semplice: Calcolo del Prodotto Vettoriale}
+    \begin{itemize}
+        \item Dati \( \vec{A} = (1, 0, 0) \) e \( \vec{B} = (0, 1, 0) \).
+        \item Calcolare \( \vec{A} \times \vec{B} \).
+        \item Soluzione:
+        \[
+        \vec{A} \times \vec{B} = (0 \cdot 0 - 0 \cdot 1, 0 \cdot 0 - 1 \cdot 0, 1 \cdot 1 - 0 \cdot 0) = (0, 0, 1)
+        \]
+        \item Il risultato è il vettore unitario lungo l'asse \( z \).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Applicazione Complessa: Momento di una Forza}
+    \begin{itemize}
+        \item Una forza \( \vec{F} = (5, 0, 0) \) N viene applicata nel punto \( \vec{r} = (0, 2, 0) \) m.
+        \item Calcolare il momento \( \vec{M} = \vec{r} \times \vec{F} \).
+        \item Soluzione:
+        \[
+        \vec{M} = (2 \cdot 0 - 0 \cdot 0, 0 \cdot 5 - 0 \cdot 0, 0 \cdot 0 - 2 \cdot 5) = (0, 0, -10)
+        \]
+        \item Il momento è \( \vec{M} = (0, 0, -10) \) N·m, indicando una rotazione attorno all'asse \( z \).
+    \end{itemize}
+\end{frame}
+
+\end{document}

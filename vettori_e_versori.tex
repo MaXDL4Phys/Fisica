@@ -1,0 +1,288 @@
+\documentclass{beamer}
+
+% Tema della presentazione
+\usetheme{Madrid}
+
+\usecolortheme{seahorse} % Tema colori
+\definecolor{peach}{RGB}{255, 128, 64}
+
+\setbeamercolor{title}{fg=teal}
+\setbeamercolor{frametitle}{ fg=peach}
+\setbeamercolor{structure}{fg=teal!40}
+
+% Pacchetti utili
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{mathtools} % Per formule migliorate
+
+% Titolo e Autore
+\title{Introduzione ai Vettori e ai Versori}
+% \subtitle{Uniforme e Uniformemente Accelerato}
+\author{Prof. M.Bosetti}
+\date{\today}
+
+\begin{document}
+
+% Slide del titolo
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Slide 1: Definizione di Vettore
+\begin{frame}{Definizione di Vettore}
+    \begin{itemize}
+        \item Un \textbf{vettore} è un ente matematico definito da:
+        \begin{itemize}
+            \item \textbf{Modulo} (o lunghezza).
+            \item \textbf{Direzione}.
+            \item \textbf{Verso}.
+        \end{itemize}
+        \item Si rappresenta graficamente come una freccia:
+        \begin{itemize}
+            \item La lunghezza della freccia indica il modulo.
+            \item La direzione è quella della freccia.
+            \item La punta indica il verso.
+        \end{itemize}
+    \end{itemize}
+    \vspace{0.5cm}
+    \centering
+    % \includegraphics[width=0.5\textwidth]{vector_example.png}
+\end{frame}
+
+% Slide 2: Rappresentazione Matematica
+\begin{frame}{Rappresentazione Matematica}
+    \begin{itemize}
+        \item Un vettore può essere scritto in termini delle sue componenti lungo gli assi cartesiani in \textbf{forma colonna}:
+        \[
+        \vec{v} =
+        \begin{pmatrix}
+            v_x \\
+            v_y
+        \end{pmatrix}
+        \quad \text{o in 3D: } \quad
+        \vec{v} =
+        \begin{pmatrix}
+            v_x \\
+            v_y \\
+            v_z
+        \end{pmatrix}
+        \]
+        \item Può anche essere scritto come combinazione lineare dei versori:
+        \[
+        \vec{v} = v_x
+        \begin{pmatrix}
+            1 \\
+            0
+        \end{pmatrix}
+        + v_y
+        \begin{pmatrix}
+            0 \\
+            1
+        \end{pmatrix}
+        \quad \text{(in 2D)}
+        \]
+        o
+        \[
+        \vec{v} = v_x
+        \begin{pmatrix}
+            1 \\
+            0 \\
+            0
+        \end{pmatrix}
+        + v_y
+        \begin{pmatrix}
+            0 \\
+            1 \\
+            0
+        \end{pmatrix}
+        + v_z
+        \begin{pmatrix}
+            0 \\
+            0 \\
+            1
+        \end{pmatrix}
+        \quad \text{(in 3D)}.
+        \]
+    \end{itemize}
+\end{frame}
+
+% Slide 3: Definizione di Versore
+\begin{frame}{Definizione di Versore}
+    \begin{itemize}
+        \item Un \textbf{versore} è un vettore di modulo unitario ($|\hat{u}| = 1$).
+        \item Serve per definire la direzione di un vettore.
+        \item Dato un vettore $\vec{v}$, il versore associato è:
+        \[
+        \hat{v} = \frac{\vec{v}}{|\vec{v}|} \quad \text{dove} \quad
+        |\vec{v}| = \sqrt{v_x^2 + v_y^2}.
+        \]
+        \item In 2D, i versori lungo gli assi cartesiani sono:
+        \[
+        \hat{i} =
+        \begin{pmatrix}
+            1 \\
+            0
+        \end{pmatrix}
+        \quad \text{e} \quad
+        \hat{j} =
+        \begin{pmatrix}
+            0 \\
+            1
+        \end{pmatrix}.
+        \]
+        \item In 3D, si aggiunge:
+        \[
+        \hat{i} =
+        \begin{pmatrix}
+            1 \\
+            0 \\
+            0
+        \end{pmatrix}, \quad
+        \hat{j} =
+        \begin{pmatrix}
+            0 \\
+            1 \\
+            0
+        \end{pmatrix}, \quad
+        \hat{k} =
+        \begin{pmatrix}
+            0 \\
+            0 \\
+            1
+        \end{pmatrix}.
+        \]
+    \end{itemize}
+\end{frame}
+
+% Slide 4: Esempio Svolto
+\begin{frame}{Esempio Svolto}
+    \textbf{Esempio:} Trova il versore di $\vec{v} =
+    \begin{pmatrix}
+        3 \\
+        4
+    \end{pmatrix}$.
+    \begin{itemize}
+        \item Calcoliamo il modulo di $\vec{v}$:
+        \[
+        |\vec{v}| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5.
+        \]
+        \item Il versore associato è:
+        \[
+        \hat{v} = \frac{\vec{v}}{|\vec{v}|} =
+        \frac{1}{5}
+        \begin{pmatrix}
+            3 \\
+            4
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            0.6 \\
+            0.8
+        \end{pmatrix}.
+        \]
+        \item Risultato: $\hat{v} =
+        \begin{pmatrix}
+            0.6 \\
+            0.8
+        \end{pmatrix}$.
+    \end{itemize}
+\end{frame}
+
+% Slide Esempio Versori in 3D
+\begin{frame}{Esempio: Versori in 3D}
+    \textbf{Definizione:} I versori in 3D sono vettori di modulo unitario ($|\hat{u}| = 1$) lungo i tre assi cartesiani:
+    % \vspace{0.5cm}
+    \textbf{Esempio:} Scriviamo il vettore $\vec{v}$ come combinazione lineare dei versori:
+    \[
+    \vec{v} =
+    \begin{pmatrix}
+        3 \\
+        -2 \\
+        5
+    \end{pmatrix}
+    = 3 \hat{i} - 2 \hat{j} + 5 \hat{k} = 3  \begin{pmatrix}
+        1 \\
+        0 \\
+        0
+    \end{pmatrix} -2     \begin{pmatrix}
+        0 \\
+        1 \\
+        0
+    \end{pmatrix}  + 5     \begin{pmatrix}
+        0 \\
+        0 \\
+        1
+    \end{pmatrix}.
+    \]
+
+    % \vspace{0.5cm}
+    \textbf{Calcolo del Versore Associato:}
+    \begin{itemize}
+        \item Il modulo di $\vec{v}$ è:
+        \[
+        |\vec{v}| = \sqrt{3^2 + (-2)^2 + 5^2} = \sqrt{9 + 4 + 25} = \sqrt{38}.
+        \]
+        \item Il versore associato è:
+        \[
+        \hat{v} = \frac{\vec{v}}{|\vec{v}|} =
+        \frac{1}{\sqrt{38}}
+        \begin{pmatrix}
+            3 \\
+            -2 \\
+            5
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            \frac{3}{\sqrt{38}} \\
+            \frac{-2}{\sqrt{38}} \\
+            \frac{5}{\sqrt{38}}
+        \end{pmatrix}.
+        \]
+    \end{itemize}
+
+    % \vspace{0.5cm}
+    % \centering
+    % \includegraphics[width=0.6\textwidth]{3d_vectors.png} % Inserire immagine di vettori in 3D
+\end{frame}
+
+
+% Slide 5: Esercizi Proposti
+\begin{frame}{Esercizi Proposti}
+    \begin{enumerate}
+        \item Calcola il modulo dei seguenti vettori:
+        \[
+        \vec{v}_1 =
+        \begin{pmatrix}
+            1 \\
+            2
+        \end{pmatrix}, \quad
+        \vec{v}_2 =
+        \begin{pmatrix}
+            0 \\
+            -3
+        \end{pmatrix}, \quad
+        \vec{v}_3 =
+        \begin{pmatrix}
+            -2 \\
+            2
+        \end{pmatrix}.
+        \]
+        \item Trova i versori associati ai vettori sopra.
+        \item Scrivi $\vec{v} =
+        \begin{pmatrix}
+            4 \\
+            -2 \\
+            3
+        \end{pmatrix}$ come combinazione lineare di $\hat{i}$, $\hat{j}$, $\hat{k}$.
+    \end{enumerate}
+\end{frame}
+
+% % Slide Finale
+% \begin{frame}
+%     \centering
+%     \Huge Domande?
+% \end{frame}
+
+\end{document}

@@ -1,0 +1,341 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse} % Tema colori
+
+% Pacchetti aggiuntivi
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc} % Libreria per il calcolo delle coordinate
+\usetikzlibrary{scopes}
+
+\title{Fisica: Dinamica, Forze ed Equilibrio}
+\author{Prof. M Bosetti}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Indice}
+\tableofcontents
+\end{frame}
+
+\section{Introduzione}
+
+\begin{frame}
+\frametitle{Primo Principio della Dinamica}
+Il primo principio della dinamica afferma che se la risultante delle forze agenti su un corpo è nulla, il corpo rimane in stato di quiete o di moto rettilineo uniforme.
+\end{frame}
+
+\section{Forze e Equilibrio}
+
+\begin{frame}
+\frametitle{Forza Peso}
+\begin{equation*}
+\vec{P} = m \cdot \vec{g}
+\end{equation*}
+La forza con cui un oggetto è attratto dalla Terra.
+\end{frame}
+
+\begin{frame}
+\frametitle{Forza Normale e Tensione}
+\begin{itemize}
+    \item \textbf{Forza Normale} ($\vec{N}$): Reazione perpendicolare della superficie.
+    \item \textbf{Tensione} ($\vec{T}$): Forza trasmessa da una corda o cavo.
+\end{itemize}
+\end{frame}
+
+% \section{Scomposizione delle Forze}
+
+\begin{frame}
+\frametitle{Perché Scomporre le Forze?}
+Per analizzare le forze agenti in diverse direzioni e risolvere problemi di equilibrio.
+\end{frame}
+
+\begin{frame}
+\frametitle{Il Piano Inclianto: scomposizione della forz apeso}
+\newcommand{\ang}{30}
+\begin{tikzpicture} [font = \small]
+% triangle:
+\draw [draw = orange, fill = orange!15] (0,0) coordinate (O) -- (\ang:6)
+	coordinate [pos=.45] (M) |- coordinate (B) (O);
+
+% angles:
+\draw [draw = orange] (O) ++(.8,0) arc (0:\ang:0.8) 
+	node [pos=.4, left] {$\alpha$};
+\draw [draw = orange] (B) rectangle ++(-0.3,0.3);
+
+\begin{scope} [-latex,rotate=\ang]
+% Object (rectangle)
+\draw [fill = purple!30,
+	draw = purple!50] (M) rectangle ++ (1,.6);
+
+% Weight Force and its projections
+\draw [dashed, red] (M) ++ (.5,.3) coordinate (MM) -- ++ (0,-1.29)
+	node [very near end, right] {$\vec{P}_{\perp} $};
+
+\draw [dashed, teal] (MM) -- ++ (-0.75,0) 
+	node [very near end, left] {$\vec{P}_\parallel $};
+
+\draw (MM) -- ++ (-\ang-90:1.5)
+	node [very near end, below left ] {$mg$};
+
+% Normal Force
+\draw [blue] (MM) -- ++ (0,1.29)
+node [very near end, right] {$N$};
+
+% Frictional Force
+% \draw (MM) -- ++ (0.75,0)
+% 	node [very near end, above] {$f$};
+\end{scope}
+\end{tikzpicture} 
+
+\begin{equation*}
+ \left\{\begin{matrix}
+\vec{P}_\parallel = m \cdot g \cdot \sin{\alpha} \\
+\vec{P}_\perp = m \cdot g \cdot \cos{\alpha}
+\end{matrix}\right.
+\end{equation*}
+\end{frame}
+
+\section{Esempi Svolti}
+\begin{frame}
+\frametitle{Esempio 1}
+\textbf{Problema:} Un blocco di massa $10\,\text{kg}$ è su un piano inclinato di $30^\circ$. Calcolare $\vec{P}_\parallel$ e $\vec{P}_\perp$.
+
+\textbf{Soluzione:}
+\begin{equation*}
+\vec{P}_\parallel = 10\,\text{kg} \times 9.81\,\text{m/s}^2 \times \sin{30^\circ} = 49.05\,\text{N}
+\end{equation*}
+\begin{equation*}
+\vec{P}_\perp = 10\,\text{kg} \times 9.81\,\text{m/s}^2 \times \cos{30^\circ} = 84.87\,\text{N}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio 2}
+\textbf{Problema:} Un oggetto di massa $5\,\text{kg}$ è sospeso a due cavi che formano angoli di $45^\circ$ con l'orizzontale. Calcolare la tensione in ciascun cavo.
+
+\textbf{Soluzione:}
+\begin{figure}[h]
+    \centering
+\begin{tikzpicture}[font = \small]
+  % Posizione del punto di sospensione e massa
+  % \coordinate (O) at (0,0); % Punto di sospensione
+  \coordinate (A) at (-1,-2); % Punto in cui termina il cavo sinistro
+  \coordinate (B) at (1,-2); % Punto in cui termina il cavo destro
+  \coordinate (M) at (0,-3); % Massa
+
+  % Disegna i cavi (dalla massa verso l'alto)
+  \draw[->, thick, red] (M) -- (A) node[  left] {$T_1$};
+  \draw[->, thick, blue] (M) -- (B) node[  right] {$T_2$};
+
+  % Disegna la massa
+  \draw[fill=gray!50] (M) circle (0.2) ;
+
+  %disegna il piano orizzonatle
+  \draw[dashed, thick] (-2,-3) -- (2,-3);
+
+  % Disegna la forza peso
+  \draw[->, thick, black] (M) -- ++(0,-1) node[below] {$\vec{P} = m\cdot \vec{g} = 5\,\text{kg} \cdot 9.8\,\frac{\text{m}}{\text{s}^2} = 49\,\text{N}$};
+
+  % Componenti delle tensioni
+  \draw[->, dashed, red] (-1, -3) -- node[ midway, left ] {$T_{1y} = T_1 \sin\theta$} (A) ;
+  \draw[dashed, blue] (1, -3) --  node[midway, right] {$T_{2y} =T_2 \sin\theta$} (B) ;
+
+
+
+  % Angoli theta
+  \draw (M) ++ (-0.75,0) arc[start angle=180, end angle=135, radius=0.75];
+  \node at (-0.5,-2.8) {$\theta$};
+
+  \draw (M) ++(0.75,0) arc[start angle=0, end angle=45, radius=0.75];
+  \node at (0.5,-2.8) {$\theta$};
+\end{tikzpicture}
+    \caption{Oggetto sospeso a due cavi}
+\end{figure}
+\begin{equation*}
+2 T \sin{45^\circ} = m \cdot g \Rightarrow T = \frac{m\cdot g}{2 \cdot \frac{\sqrt{2}}{2}} = \frac{m\cdot g}{\sqrt{2}}
+\end{equation*}
+\begin{equation*}
+T = \frac{5\,\text{kg} \cdot \, 9.8\,\text{m/s}^2}{\sqrt{2}} = 34.6 \text{N}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio 3}
+\textbf{Problema:} Un blocco di massa $8\,\text{kg}$ è su un piano inclinato di $20^\circ$. Determinare la forza normale esercitata dal piano sul blocco.
+\textbf{Soluzione:}
+\begin{equation*}
+\vec{N} = m \cdot g \cdot \cos{\alpha} = 8\,\text{kg} \times 9.81\,\text{m/s}^2 \times \cos{20^\circ} = 73.68\,\text{N}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio 4}
+\textbf{Problema:} Un oggetto di massa $15\,\text{kg}$ è sospeso da un cavo verticale. Calcolare la tensione nel cavo.
+\begin{tikzpicture}[
+    force/.style={>=latex,draw=blue,fill=blue},
+    axis/.style={densely dashed, gray,font=\small},
+    M/.style={rectangle,draw,fill=lightgray,minimum size=0.5cm,thin},
+    m/.style={rectangle,draw=black,fill=lightgray,minimum size=0.3cm,thin},
+    plane/.style={draw=black,fill=blue!10},
+    string/.style={draw=red, thick},
+    pulley/.style={thick},
+]
+    % Free body diagram of m
+    \node[m] (m) {};
+    \draw[axis,->] (m) -- ++(0,-2) node[left] {$+$};
+    {[force,->]
+        \draw (m.north) -- ++(0,1) node[above] {$T'$};
+        \draw (m.south) -- ++(0,-1) node[right] {$\vec{P}$};
+    }
+\end{tikzpicture}
+
+\textbf{Soluzione:}
+\begin{equation*}
+\vec{T} + \vec{P} = 0
+\end{equation*}
+\begin{equation*}
+-T + P = 0 \Rightarrow P = T
+\end{equation*}
+\begin{equation*}
+T = m \cdot g = 15\,\text{kg} \times 9.81\,\text{m/s}^2 = 147.15\,\text{N}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio 5}
+\textbf{Problema:} Un corpo di massa $12\,\text{kg}$ è trainato su un piano orizzontale con una forza di $30\,\text{N}$ applicata con un angolo di $45^\circ$ rispetto all'orizzontale. Determinare la reazione vincolare verticale.
+\begin{tikzpicture}
+  % Disegna il piano orizzontale
+  \draw[thick] (-1,0) -- (6,0);
+
+  % Posizione del corpo
+  \coordinate (A) at (2,0);
+
+  % Disegna il corpo (un rettangolo)
+  \draw[fill=blue!20] (A) rectangle ++(1,0.5);
+
+  % Peso (forza gravitazionale)
+  \draw[->, thick] ($(A)+(0.5,0)$) -- ++(0,-2) node[below] {$\vec{P} = mg$};
+
+  % Forza applicata
+  \draw[->, thick, red] ($(A)+(0.5,0.25)$) -- ++(1.5,1.5) node[ left] {$\vec{F}$};
+
+  % Scomposizione della forza applicata
+  % \draw[dashed, red] ($(A)+(0.5,0.25)$) -- ++(1.5,0);
+  % \draw[dashed, red] ($(A)+(2.5,0.25)$) -- ++(0,1.5);
+
+  % Componenti della forza applicata
+  \draw[->, dashed, red] ($(A)+(0.5,0.25)$) -- ++(1.5,0) node[below right] {$F_x$};
+  \draw[->, dashed, teal] ($(A)+(2,0.25)$) -- ++(0,1.5) node[right] {$F_y$};
+
+  % Reazione vincolare
+  \draw[->, thick, blue] ($(A)+(0.5,0.5)$) -- ++(0,0.5) node[above] {$\vec{N}$};
+
+  % Angolo theta
+  \draw ($(A)+(1.5,0.25)$) arc (0:45:1);
+  \node at ($(A)+(1.2,0.5)$) {$\theta$};
+\end{tikzpicture}
+
+\textbf{Soluzione:}
+\begin{equation*}
+F_{y} = 30\,\text{N} \times \sin{45^\circ} = 21.21\,\text{N}
+\end{equation*}
+\begin{equation*}
+\vec{N} = m \cdot g - F_{y} = 12\,\text{kg} \times 9.81\,\text{m/s}^2 - 21.21\,\text{N} = 96.51\,\text{N}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio 6}
+\textbf{Problema:} Un piano inclinato ha un angolo di $60^\circ$. Qual è la forza normale su un blocco di $2\,\text{kg}$ posto su di esso?
+
+\textbf{Soluzione:}
+
+\begin{equation*}
+\vec{N} = m \cdot g \cdot \cos{\alpha} = 2\,\text{kg} \times 9.81\,\text{m/s}^2 \times \cos{60^\circ} = 9.81\,\text{N}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio 7}
+\textbf{Problema:} Un oggetto è in equilibrio sotto l'azione di tre forze. Due forze sono $\vec{F}_1 = 10\,\text{N}$ a $0^\circ$ e $\vec{F}_2 = 15\,\text{N}$ a $90^\circ$. Calcolare la terza forza $\vec{F}_3$ necessaria per mantenere l'equilibrio.
+
+\textbf{Soluzione:}
+
+\begin{equation*}
+F_3 = \sqrt{10^2 + 15^2} = 18.03\,\text{N}
+\end{equation*}
+\begin{equation*}
+\theta = \arctan{\left(\frac{15}{10}\right)} = 56.31^\circ
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio 8}
+\textbf{Problema:} Calcolare la tensione in due cavi che sostengono un carico di $20\,\text{kg}$, formando angoli di $30^\circ$ e $60^\circ$ con l'orizzontale.
+
+\textbf{Soluzione:}
+
+\begin{equation*}
+T_2 = 170\,\text{N}
+\end{equation*}
+\begin{equation*}
+T_1 = 98\,\text{N}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio 9}
+\textbf{Problema:} Un oggetto è spinto su per un piano inclinato senza attrito con una forza parallela al piano. Se la forza è di $50\,\text{N}$, l'oggetto ha massa $5\,\text{kg}$ e l'angolo del piano è $30^\circ$, qual è l'accelerazione dell'oggetto?
+
+\textbf{Soluzione:}
+
+\begin{equation*}
+F_{\text{netta}} = 50\,\text{N} - 24.525\,\text{N} = 25.475\,\text{N}
+\end{equation*}
+\begin{equation*}
+a = \frac{25.475\,\text{N}}{5\,\text{kg}} = 5.095\,\text{m/s}^2
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio 10}
+\textbf{Problema:} Determinare la forza necessaria per mantenere in equilibrio un blocco su un piano inclinato di $25^\circ$, considerando un attrito con coefficiente $\mu = 0.1$. Il blocco ha una massa di $10\,\text{kg}$.
+
+\textbf{Soluzione:}
+
+\begin{equation*}
+F_{\text{attrito}} = 0.1 \times 88.89\,\text{N} = 8.889\,\text{N}
+\end{equation*}
+\begin{equation*}
+F = 41.42\,\text{N} - 8.889\,\text{N} = 32.53\,\text{N}
+\end{equation*}
+\end{frame}
+
+\section{Esercizi}
+
+\begin{frame}
+\frametitle{Esercizi da Svolgere}
+\begin{enumerate}
+    \item Un blocco di massa $8\,\text{kg}$ è su un piano inclinato di $20^\circ$. Calcolare $\vec{P}_\parallel$ e $\vec{P}_\perp$.
+    \item Un oggetto di $15\,\text{kg}$ è sospeso a un cavo. Determinare la tensione nel cavo.
+    \item Un piano inclinato ha un angolo di $60^\circ$. Qual è la forza normale su un blocco di $2\,\text{kg}$?
+    \item Un oggetto è in equilibrio sotto l'azione di tre forze. Due forze sono di $10\,\text{N}$ e $15\,\text{N}$ con angoli di $0^\circ$ e $90^\circ$. Calcolare la terza forza.
+    \item Un corpo di massa $12\,\text{kg}$ è trainato su un piano orizzontale con una forza di $30\,\text{N}$ applicata con un angolo di $45^\circ$ rispetto all'orizzontale. Determinare la reazione vincolare.
+    \item Calcolare la tensione in due cavi che sostengono un carico di $20\,\text{kg}$, formando angoli di $30^\circ$ e $60^\circ$ con l'orizzontale.
+    \item Un blocco è in equilibrio su un piano inclinato senza attrito. Se l'angolo del piano è aumentato, cosa succede alle componenti della forza peso?
+    \item Un oggetto è spinto su per un piano inclinato con una forza parallela al piano. Se la forza è di $50\,\text{N}$ e l'oggetto ha massa $5\,\text{kg}$, qual è l'accelerazione?
+    \item Determinare la forza necessaria per mantenere in equilibrio un blocco su un piano inclinato di $25^\circ$ considerando attrito con coefficiente $\mu = 0.1$.
+    \item Un ponte sostiene un carico distribuito uniformemente di $1000\,\text{kg}$. Calcolare la reazione vincolare totale del ponte.
+\end{enumerate}
+\end{frame}
+
+\end{document}

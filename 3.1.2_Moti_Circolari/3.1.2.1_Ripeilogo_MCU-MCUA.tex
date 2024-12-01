@@ -1,0 +1,137 @@
+
+
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse} % Tema colori
+\definecolor{peach}{RGB}{255, 128, 64}
+
+\setbeamercolor{title}{fg=teal}
+\setbeamercolor{frametitle}{ fg=teal}
+\setbeamercolor{structure}{fg=peach}
+
+% Pacchetti aggiuntivi
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc} % Libreria per il calcolo delle coordinate
+\usetikzlibrary{scopes}
+\title{Moto Circolare}
+\subtitle{Uniforme e Uniformemente Accelerato}
+\author{Prof. M.Bosetti}
+\date{\today}
+
+\begin{document}
+
+% Slide 1: Titolo
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Slide 2: Introduzione
+\begin{frame}{Introduzione al Moto Circolare}
+    \begin{itemize}
+        \item Il moto circolare è un moto lungo una traiettoria circolare.
+        \item Tipologie:
+        \begin{enumerate}
+            \item \textbf{Moto Circolare Uniforme (MCU)}: velocità angolare costante.
+            \item \textbf{Moto Circolare Uniformemente Accelerato (MCUA)}: accelerazione angolare costante.
+        \end{enumerate}
+    \end{itemize}
+    \vspace{1cm}
+    % \includegraphics[width=0.8\textwidth]{placeholder.png} % Segnaposto per immagine
+\end{frame}
+
+% Slide 3: Parametri fondamentali
+\begin{frame}{Parametri Fondamentali del Moto Circolare}
+    \begin{itemize}
+        \item \textbf{Raggio} (\(r\)): distanza dal centro alla traiettoria.
+        \item \textbf{Velocità Angolare} (\(\omega\)): quanto velocemente varia l'angolo.
+        \[ \omega = \frac{\Delta\theta}{\Delta t} = \frac{2\pi}{T}= 2\pi f  \quad (\text{rad/s}) \]
+        \item \textbf{Accelerazione Angolare} (\(\alpha\)): variazione di \(\omega\) nel tempo.
+        \[ \alpha = \frac{\Delta\omega}{\Delta t} \quad (\text{rad/s}^2) \]
+        \item \textbf{Velocità Tangenziale} (\(v\)): velocità lineare lungo la circonferenza.
+        \[ v = r \cdot \omega \]
+        \item \textbf{Accelerazione Centripeta} (\(a_c\)): mantiene il corpo sulla traiettoria.
+        \[ a_c = \frac{v^2}{r} = r \cdot \omega^2 \]
+    \end{itemize}
+\end{frame}
+
+% Slide 4: Moto Circolare Uniforme
+\begin{frame}{Moto Circolare Uniforme (MCU)}
+    \begin{itemize}
+        \item \textbf{Caratteristiche}:
+        \begin{itemize}
+            \item Velocità angolare \(\omega\): costante.
+            \item Accelerazione angolare \(\alpha\): nulla.
+            \item Moto periodico: tempo costante per completare un giro.
+        \end{itemize}
+        \item \textbf{Formule principali}:
+        \[ \theta(t) = \omega t + \theta_0, \quad v = r \cdot \omega, \quad a_c = r \cdot \omega^2 \]
+    \end{itemize}
+    % \includegraphics[width=0.8\textwidth]{placeholder.png} % Segnaposto per immagine
+\end{frame}
+
+% Slide 5: Moto Circolare Uniformemente Accelerato
+\begin{frame}{Moto Circolare Uniformemente Accelerato (MCUA)}
+    \begin{itemize}
+        \item \textbf{Caratteristiche}:
+        \begin{itemize}
+            \item Velocità angolare \(\omega\): varia nel tempo.
+            \item Accelerazione angolare \(\alpha\): costante.
+        \end{itemize}
+        \item \textbf{Formule principali}:
+        \[ \theta(t) = \theta_0 + \omega_0 t + \frac{1}{2}\alpha t^2 \]
+        \[ \omega(t) = \omega_0 + \alpha t, \quad v(t) = r \cdot \omega(t),\]
+        \[a_c = r \cdot \omega^2, \quad a_t = r \cdot \alpha\]
+        $$ a = \sqrt{a_t^2 + a_c^2} = \sqrt{r^2 \cdot \omega^4 + r^2 \cdot \alpha^2 } = r \sqrt{  \omega^4 +\alpha^2 }  $$
+    \end{itemize}
+    % \includegraphics[width=0.8\textwidth]{placeholder.png} % Segnaposto per immagine
+\end{frame}
+
+% Slide 6: Tabella comparativa
+% Slide 6: Tabella comparativa con dimensioni ridotte
+\begin{frame}{Tabella Comparativa: MCU vs MCUA}
+    \begin{table}[h!]
+        \centering
+        \resizebox{\textwidth}{!}{ % Ridimensiona la tabella per adattarla alla larghezza del frame
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Parametro} & \textbf{MCU (Moto Circolare Uniforme)} & \textbf{MCUA (Moto Circolare Uniformemente Accelerato)} \\
+            \hline
+            Velocità Angolare (\(\omega\) ) & \(\omega = \text{costante}\) & \(\omega(t) = \omega_0 + \alpha t\) \\
+            \hline
+            Accelerazione Angolare (\(\alpha\)) & \(\alpha = 0\) & \(\alpha = \text{costante}\) \\
+            \hline
+            Posizione Angolare (\(\theta\)) & \(\theta(t) = \omega t + \theta_0\) & \(\theta(t) = \theta_0 + \omega_0 t + \frac{1}{2}\alpha t^2\) \\
+            \hline
+            Velocità Tangenziale (\(v\)) & \(v = r \cdot \omega\) & \(v(t) = r \cdot \omega(t)\) \\
+            \hline
+            Accelerazione Centripeta (\(a_c\)) & \(a_c = r \cdot \omega^2\) & \(a_c = r \cdot \omega^2\) \\
+            \hline
+            Accelerazione Tangenziale (\(a_t\)) & \(a_t = 0\) & \(a_t = r \cdot \alpha\) \\
+            \hline
+            Accelerazione Totale (\(a\)) & \(a = a_c = r \cdot \omega^2\) & \(a = \sqrt{a_c^2 + a_t^2}\) \\
+            \hline
+        \end{tabular}
+        }
+    \end{table}
+\end{frame}
+
+% Slide 7: Conclusione
+\begin{frame}{Conclusione}
+    \begin{itemize}
+        \item Il moto circolare è fondamentale per descrivere fenomeni ciclici.
+        \item Differenze principali tra MCU e MCUA risiedono nella variazione delle velocità e delle accelerazioni.
+        \item Esempi pratici:
+        \begin{itemize}
+            \item MCU: rotazione di una ruota.
+            \item MCUA: accelerazione di una giostra.
+        \end{itemize}
+    \end{itemize}
+    % \includegraphics[width=0.8\textwidth]{placeholder.png} % Segnaposto per immagine
+\end{frame}
+
+\end{document}

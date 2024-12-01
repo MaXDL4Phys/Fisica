@@ -1,0 +1,116 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse} % Tema colori
+
+% Pacchetti aggiuntivi
+\usepackage{xcolor}
+
+% Colori personalizzati
+\setbeamercolor{title}{fg=teal}
+\setbeamercolor{frametitle}{bg=teal!40, fg=white}
+\setbeamercolor{structure}{fg=teal}
+
+
+% Definizione dei colori personalizzati per teoria e problemi
+\definecolor{theorycolor}{RGB}{173, 216, 230} % Blu chiaro per la teoria
+\definecolor{problemcolor}{RGB}{255, 100, 0}   % Arancione per i problemi
+\title{Analisi Dimensionale del Periodo del Pendolo}
+\subtitle{}
+\author{Prof. Massimo Bosetti}
+\institute{Liceo da Vinci}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+\setbeamercolor{frametitle}{bg=teal} % Colore per la teoria
+\section{Introduzione}
+
+\begin{frame}{Introduzione al Problema}
+    \begin{itemize}
+        \item Il periodo $ T $ di un pendolo semplice è una funzione della lunghezza $ L $, dell'accelerazione gravitazionale $ g $ e, potenzialmente, della massa $ M $.
+        \item Scopo: Determinare, tramite l'analisi dimensionale, gli esponenti nella formula generica
+        $$ T = k \cdot M^\gamma \cdot L^\alpha \cdot g^\beta $$
+        dove $ k $ è una costante adimensionale.
+    \end{itemize}
+\end{frame}
+
+\section{Definizione delle Dimensioni}
+
+\begin{frame}{Definizione delle Dimensioni}
+    \begin{itemize}
+        \item $ T $: Periodo, con dimensioni di tempo $[T]$.
+        \item $ M $: Massa del pendolo, con dimensioni di massa $[M]$.
+        \item $ L $: Lunghezza del pendolo, con dimensioni di lunghezza $[L]$.
+        \item $ g $: Accelerazione gravitazionale, con dimensioni di lunghezza diviso tempo al quadrato $[L \cdot T^{-2}]$.
+    \end{itemize}
+    \centering
+    Scopo: trovare $\alpha$, $\beta$ e $\gamma$ affinché l'espressione $ T = M^\gamma L^\alpha g^\beta $ abbia dimensioni di tempo.
+\end{frame}
+
+\section{Costruzione della Formula Dimensionale}
+
+\begin{frame}{Formula Dimensionale}
+    Scriviamo le dimensioni dell'espressione:
+    $$ [T] = [M]^\gamma \cdot [L]^\alpha \cdot [L \cdot T^{-2}]^\beta $$
+    \begin{itemize}
+        \item Espandendo le dimensioni di ciascun termine, otteniamo:
+        $$ [T] = [M]^\gamma \cdot [L]^{\alpha + \beta} \cdot [T]^{-2\beta} $$
+    \item Per determinare $\gamma$, $\alpha$ e $\beta$, uguagliamo le dimensioni di $ [M] $, $ [L] $, e $ [T] $.
+    \end{itemize}
+\end{frame}
+
+\section{Equazioni Dimensionali}
+
+\begin{frame}{Equazioni Dimensionali}
+    Per ottenere le condizioni sugli esponenti, imponiamo che le dimensioni coincidano:
+    \begin{itemize}
+        \item Per la dimensione di massa $[M]$:
+        $$ \gamma = 0 $$
+        \item Per la dimensione di lunghezza $[L]$:
+        $$ \alpha + \beta = 0 $$
+        \item Per la dimensione di tempo $[T]$:
+        $$ -2\beta = 1 $$
+    \end{itemize}
+\end{frame}
+
+\section{Soluzione del Sistema}
+
+\begin{frame}{Soluzione del Sistema di Equazioni}
+    Risolviamo il sistema di equazioni:
+    \begin{itemize}
+        \item Dall'equazione $\gamma = 0$, la massa $ M $ non influenza il periodo $ T $.
+        \item Dall'equazione $-2\beta = 1$, otteniamo:
+        $$ \beta = -\frac{1}{2} $$
+        \item Sostituendo $\beta = -\frac{1}{2}$ nell'equazione $\alpha + \beta = 0$:
+        $$ \alpha - \frac{1}{2} = 0 \Rightarrow \alpha = \frac{1}{2} $$
+    \end{itemize}
+\end{frame}
+
+\section{Risultato Finale}
+
+\begin{frame}{Risultato Finale}
+    Gli esponenti trovati sono:
+    $$ \gamma = 0, \quad \alpha = \frac{1}{2}, \quad \beta = -\frac{1}{2} $$
+    \begin{itemize}
+        \item La formula dimensionale per il periodo $ T $ del pendolo è quindi:
+        $$ T \propto L^{\frac{1}{2}} \cdot g^{-\frac{1}{2}} $$
+        \item In termini di una costante adimensionale $ k $:
+        $$ T = k \cdot \sqrt{\frac{L}{g}} $$
+        con $ k = 2\pi $ nella formula esatta del periodo di un pendolo semplice.
+    \end{itemize}
+\end{frame}
+
+\section{Conclusioni}
+
+\begin{frame}{Conclusioni}
+    \begin{itemize}
+        \item L'analisi dimensionale mostra che il periodo di un pendolo dipende solo dalla lunghezza $ L $ e dall'accelerazione gravitazionale $ g $, ma non dalla massa $ M $.
+        \item Abbiamo derivato la dipendenza del periodo: $ T \propto \sqrt{\frac{L}{g}} $.
+        \item Questo risultato è coerente con la formula esatta per il periodo di un pendolo semplice.
+    \end{itemize}
+\end{frame}
+
+\end{document}
