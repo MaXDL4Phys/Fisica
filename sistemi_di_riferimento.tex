@@ -1,0 +1,35 @@
+\documentclass[tikz,border=3.14mm]{standalone}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1.5]
+
+  % Coordinate points
+  \coordinate (O) at (0,0); % Origin (S)
+  \coordinate (S') at (1,1.5); % Origin of S'
+  \coordinate (P) at (3,2); % Point P
+  
+  % Axes for system S (x, y, z)
+  \draw[->,thick] (O) -- (3,0) node[below] {\(y\)};
+  \draw[->,thick] (O) -- (0,3) node[left] {\(z\)};
+  \draw[->,thick] (O) -- (-0.5,-2) node[below] {\(x\)};
+  
+  % Axes for system S' (x', y', z')
+  \draw[->,thick,dashed, blue] (S') -- ++(3,0) node[right] {\(y'\)};
+  \draw[->,thick,dashed, blue] (S') -- ++(0,3) node[above] {\(z'\)};
+  \draw[->,thick,dashed, blue] (S') -- ++(-0.5,-2) node[right] {\(x'\)};
+  
+  % Vectors
+  \draw[->,thick,black] (O) -- (P) node[midway,below right] {\(\vec{r}_{PS}\)};
+  \draw[->,thick,teal] (O) -- (S') node[midway,above left] {\(\vec{r}_{S'S}\)};
+  \draw[->,thick,blue] (S') -- (P) node[midway,above] {\(\vec{r}_{PS'}\)};
+  
+  % Points
+  \filldraw[red] (P) circle (2pt) node[above] {\(P\)};
+  \filldraw[black] (O) circle (1.5pt) node[below left] {\(S\)};
+  \filldraw[teal] (S') circle (1.5pt) node[above left] {\(S'\)};
+  
+\end{tikzpicture}
+
+\end{document}

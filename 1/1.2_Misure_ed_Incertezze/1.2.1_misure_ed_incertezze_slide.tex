@@ -1,0 +1,170 @@
+\documentclass[9pt]{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse} % Tema colori
+\usepackage[dvipsnames]{xcolor}
+% Pacchetti aggiuntivi
+\usepackage{xcolor}
+
+% Colori personalizzati
+\setbeamercolor{title}{fg=teal}
+\setbeamercolor{frametitle}{bg=teal!40, fg=violet}
+\setbeamercolor{structure}{fg=teal}
+
+% Definizione dei colori personalizzati per teoria e problemi
+\definecolor{theorycolor}{RGB}{173, 216, 230} % Blu chiaro per la teoria
+\definecolor{problemcolor}{RGB}{255, 100, 0}   % Arancione per i problemi
+\title{Medie e semidisperzione}
+\subtitle{}
+\author{Prof. Massimo Bosetti}
+\institute{Liceo da Vinci}
+\date{}
+
+
+\begin{document}
+\frame{\titlepage}
+% Slide 1: Media
+\begin{frame}{Media di una serie di misure}
+\textbf{Definizione:} La media aritmetica di una serie di misure si calcola sommando tutte le misure e dividendo per il numero totale delle misure:
+$$
+\bar{x} = \frac{\sum_{i=1}^N x_i}{N}
+$$
+\textbf{Esempio:}
+\begin{itemize}
+    \item Misure: $ 4.0, 4.2, 3.9, 4.1, 4.0 $
+    \item Calcolo:
+    $$
+    \bar{x} = \frac{4.0 + 4.2 + 3.9 + 4.1 + 4.0}{5} = 4.04
+    $$
+\end{itemize}
+\end{frame}
+
+% Slide 2: Semidispersione
+\begin{frame}{Semidispersione}
+\textbf{Definizione:} La semidispersione rappresenta la metà della differenza tra il valore massimo e il valore minimo:
+$$
+\delta = \frac{x_{\text{MAX}} - x_{\text{min}}}{2}
+$$
+\textbf{Esempio:}
+\begin{itemize}
+    \item Misure: $ 4.0, 4.2, 3.9, 4.1, 4.0 $
+    \item Valore massimo: $ x_{\text{MAX}} = 4.2 $, valore minimo: $ x_{\text{min}} = 3.9 $
+    \item Calcolo:
+    $$
+    \delta = \frac{4.2 - 3.9}{2} = 0.15
+    $$
+\end{itemize}
+\end{frame}
+
+% Slide 3: Deviazione standard
+\begin{frame}{Deviazione Standard}
+\textbf{Definizione:} La deviazione standard misura quanto le misure si discostano dalla media:
+$$
+\sigma = \sqrt{\frac{\sum_{i=1}^N (x_i - \bar{x})^2}{N}}
+$$
+\textbf{Esempio:}
+\begin{itemize}
+    \item Misure: $ 4.0, 4.2, 3.9, 4.1, 4.0 $
+    \item Media: $ \bar{x} = 4.04 $
+    \item Calcolo:
+    $$
+    \sigma = \sqrt{\frac{(4.0 - 4.04)^2 + (4.2 - 4.04)^2 + \dots}{5}} = 0.1
+    $$
+\end{itemize}
+\end{frame}
+
+% Slide: Incertezza Relativa e Percentuale
+\begin{frame}{Incertezza Relativa e Percentuale}
+\textbf{Definizione:}
+\begin{itemize}
+    \item \textbf{Incertezza relativa:} Rapporto tra l’incertezza assoluta e la misura stessa:
+    $$
+    \delta_{\text{rel}} = \frac{\delta x}{x}
+    $$
+    \item \textbf{Incertezza percentuale:} L’incertezza relativa espressa in percentuale:
+    $$
+    \delta_{\text{perc}} = \delta_{\text{rel}} \cdot 100
+    $$
+\end{itemize}
+
+\textbf{Esempio:}
+\begin{itemize}
+    \item Misura: $ x = 8.0 \pm 0.2 $
+    \item Calcolo dell’incertezza relativa:
+    $$
+    \delta_{\text{rel}} = \frac{0.2}{8.0} = 0.025
+    $$
+    \item Calcolo dell’incertezza percentuale:
+    $$
+    \delta_{\%} = 0.025 \cdot 100 = 2.5\%
+    $$
+\end{itemize}
+
+\textbf{Risultato:} La misura può essere espressa come:
+$
+x = 8.0 \pm 2.5\%
+$
+\end{frame}
+
+\section{Propagazione degli errori}
+\begin{frame}{Propagazione degli errori}
+\centering
+\Huge Propagazione degli errori
+\end{frame}
+
+
+% Slide 4: Propagazione degli errori
+\begin{frame}{Propagazione degli errori}
+\textbf{Definizione:} La propagazione degli errori permette di calcolare l’incertezza nei risultati ottenuti combinando misure incerte.
+\begin{itemize}
+    \item \textbf{Somma o differenza:}
+    $$
+    \Delta z = \sqrt{(\Delta x)^2 + (\Delta y)^2}
+    $$
+    \item \textbf{Moltiplicazione o divisione:}
+    $$
+    \frac{\Delta z}{z} = \sqrt{\left(\frac{\Delta x}{x}\right)^2 + \left(\frac{\Delta y}{y}\right)^2}
+    $$
+\end{itemize}
+\textbf{Esempio:}
+\begin{itemize}
+    \item Misure: $ x = 4.0 \pm 0.2 $, $ y = 3.0 \pm 0.1 $
+    \item Calcolo per $ z = x + y $:
+    $$
+    \Delta z = \sqrt{(0.2)^2 + (0.1)^2} = 0.22
+    $$
+    Risultato: $ z = 7.0 \pm 0.22 $
+\end{itemize}
+\end{frame}
+
+% Slide 5: Esercizi Svolti
+\begin{frame}{Esercizi Svolti}
+\textbf{Esercizio 1:} Calcola la media, la semidispersione e la deviazione standard per:
+$$
+5.0, 4.8, 5.2, 5.1, 4.9
+$$
+\textbf{Esercizio 2:} Trova il risultato e l’errore per:
+$$
+z = x \cdot y, \quad x = 2.0 \pm 0.1, \quad y = 3.0 \pm 0.2
+$$
+\end{frame}
+
+% Slide 6: Esercizi da Fare
+\begin{frame}{Esercizi da Fare}
+\textbf{Esercizio 1:}
+\begin{itemize}
+    \item Misure: $ 3.0, 3.1, 3.2, 3.0, 3.1 $
+    \item Calcola: media, semidispersione, deviazione standard.
+\end{itemize}
+\textbf{Esercizio 2:}
+\begin{itemize}
+    \item Due grandezze: $ a = 4.0 \pm 0.1 $, $ b = 2.0 \pm 0.05 $
+    \item Calcola $ c = a - b $ con il relativo errore.
+\end{itemize}
+\textbf{Esercizio 3:}
+\begin{itemize}
+    \item Misure combinate: $ x = 6.0 \pm 0.3 $, $ y = 2.0 \pm 0.2 $
+    \item Calcola $ z = x / y $ con l’errore.
+\end{itemize}
+\end{frame}
+
+\end{document}
